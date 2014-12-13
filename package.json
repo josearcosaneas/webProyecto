@@ -1,15 +1,25 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
-  "description": "nombre proyecto",
+  "name": "elegant-insults",
+  "version": "0.0.0",
+  "description": "Insult eachother in the most elegant of ways",
+  "main": "Server.js",
   "dependencies": {
-    "express": "~4.9.x",
-    "jade": "0.34.1",
+    "restify": "*",
     "mysql": "*",
-    
+    "express": "~3.4.8"
   },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js"
+  },
+  "author": "roman-sharf",
+  "license": "ISC",
   "engines": {
-    "node": "0.10.x",
-    "npm": "1.3.x"
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@heroku.com:elegant-insults.git"
   }
 }
