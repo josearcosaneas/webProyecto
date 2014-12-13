@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>Proyecto final curso</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	var to,text;
+	/*
+	Las siguientes funciones realizan llamadas 
+	a la api para hacer uso de las funciones de la web	
+	*/
+	/*
+	Hace uso del boton buscar usuario para buscar un usuario por su ID, 
+	introducido en el espacio de texto disponible para este.
+	Ademas se muestra un mensaje por pantalla y una alerta.	
+	*/
+	$("#BuscarUsuario").click(function(){		
+		to=$("#to").val();		
+		$("#message").text("Buscando ID"+to);
+	   
+		$.getJSON("http://localhost:3004/usuarios/"+to,
+         function(data) {
+            alert(JSON.stringify(data));         
+          });
+		
+	});
+	/*
+	A difencia del metodo anterior este busca todos los usuarios 
+	registrados en la base de datso	
+	*/
+	$("#MostrarTodos").click(function () {
+		$("#message1").text("Mostrando todos");	
+		$.getJSON("http://localhost:3004/usuarios",
+         function(data) {
+            alert(JSON.stringify(data));         
+          });	
+          
+	/*
+	Esta funcion se activa al clikar en el boton registar 
+	Coje la informacion de los campos disponibles y realiza una peticion a la API	
+	*/			
+	});
+	$("#Registrar").click(function () {
+		var id = $("#to3").val();
+		var nombre = $("#to4").val();
+		var correo = $("#to5").val();
+		var apellidos = $("#to6").val();
+		
+		 $.getJSON("http://localhost:3004/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
+         function(data) {
+            alert(JSON.stringify(data));         
+          });
+		
+		});	
+	
+	/*
+	Esta funcion el lugar buscar por el id elimina  a un usuario por su id.
+	
+	*/		
+	$("#Eliminar").click(function () {
+		to=$("#to2").val();
+		$("#message2").text("eliminando a: "+to);			
+		 $.ajax({
+        type: 'DELETE',
+        url: "http://localhost:3004/usuarios/"+to,
+        success: function(data, textStatus, jqXHR){
+            alert('Exito al borrar');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('Error al borrar');
+        }
+    		});
+		
+		}
+		
+	);
+	
+	/*
+	
+	
+	
+	*/	
+		$("#Registrar").click(function () {
+		var id = $("#to3").val();
+		var nombre = $("#to4").val();
+		var correo = $("#to5").val();
+		var apellidos = $("#to6").val();
+		
+		 $.getJSON("http://localhost:3004/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
+         function(data) {
+            alert(JSON.stringify(data));         
+          });
+		
+		});
+		
+});
+</script>
+</head>
+<body>
+<div id="container">
+<h1>Ejemplo Aplicacion web </h1>
+<h4>Buscar usuario </h4>
+<input type="text" id="to" placeholder="Introduce ID de usuario"><br>
+<button id="BuscarUsuario">BuscarUsuario</button><br>
+<span id="message"></span><br>
+<h4> Mostrar todos los usuarios de la base de datos</h4>
+<button id="MostrarTodos">Buscar todos</button><br>
+<span id="message1"></span><br>
+<h4> Elimina usuario</h4>
+<input type="text" id="to2" placeholder="Introduce ID de usuario"><br>
+<button id="Eliminar">Eliminar</button><br>
+<span id="message2"></span><br>
+<h4> Introduce un nuevo usuario</h4>
+<table>
+<tr>
+<td><input type="text" id="to3" placeholder="Introduce ID de usuario"><br></td>
+</tr>
+<tr>
+<td><input type="text" id="to4" placeholder="Introduce Nombre"><br></td>
+</tr>
+<tr>
+<td><input type="text" id="to5" placeholder="Introduce Correo"><br></td>
+</tr>
+<tr>
+<td><input type="text" id="to6" placeholder="Introduce Apellidos"><br></td>
+</tr>
+<button id="Registrar">Registrar usuario</button><br>
+</div>
+</body>
+</html>
