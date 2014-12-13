@@ -4,15 +4,5 @@
     "express": "~4.9.x",
     "mysql": "*",
     "restify": "*",
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  }
 }
