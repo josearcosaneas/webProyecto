@@ -1,7 +1,7 @@
 {
-  "name": "elegant-insults",
+  "name": "pagina web",
   "version": "0.0.0",
-  "description": "Insult eachother in the most elegant of ways",
+  "description": "Un ejemplo de api rest",
   "main": "Server.js",
   "dependencies": {
     "restify": "*",
