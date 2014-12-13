@@ -18,7 +18,7 @@ $(document).ready(function(){
 		to=$("#to").val();		
 		$("#message").text("Buscando ID"+to);
 	   
-		$.getJSON("http://localhost:3004/usuarios/"+to,
+		$.getJSON("/usuarios/"+to,
          function(data) {
             alert(JSON.stringify(data));         
           });
@@ -30,7 +30,7 @@ $(document).ready(function(){
 	*/
 	$("#MostrarTodos").click(function () {
 		$("#message1").text("Mostrando todos");	
-		$.getJSON("http://localhost:3004/usuarios",
+		$.getJSON("/usuarios",
          function(data) {
             alert(JSON.stringify(data));         
           });	
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		var correo = $("#to5").val();
 		var apellidos = $("#to6").val();
 		
-		 $.getJSON("http://localhost:3004/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
+		 $.getJSON("/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
          function(data) {
             alert(JSON.stringify(data));         
           });
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		$("#message2").text("eliminando a: "+to);			
 		 $.ajax({
         type: 'DELETE',
-        url: "http://localhost:3004/usuarios/"+to,
+        url: "/usuarios/"+to,
         success: function(data, textStatus, jqXHR){
             alert('Exito al borrar');
         },
@@ -86,7 +86,7 @@ $(document).ready(function(){
 		var correo = $("#to5").val();
 		var apellidos = $("#to6").val();
 		
-		 $.getJSON("http://localhost:3004/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
+		 $.getJSON("/usuarios/"+id+"/"+nombre+"/"+correo+"/"+apellidos,
          function(data) {
             alert(JSON.stringify(data));         
           });

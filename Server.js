@@ -28,7 +28,7 @@ connection = mysql.createConnection({
 // ip direccion del servidor
 var ip_addr = '127.0.0.1';
 // puerto 
-var port    =  '3004';
+var port    =  process.env.PORT || 5000;
 // creamos el servidor
 var server = restify.createServer({
     name : "usuarios"

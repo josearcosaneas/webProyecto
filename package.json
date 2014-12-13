@@ -1,25 +1,15 @@
 {
-  "name": "pagina web",
-  "version": "0.0.0",
-  "description": "Un ejemplo de api rest",
-  "main": "Server.js",
+  "name": "node-js-getting-started",
+  "version": "0.1.2",
+  "description": "nombre proyecto",
   "dependencies": {
-    "restify": "*",
+    "express": "~4.9.x",
+    "jade": "0.34.1",
     "mysql": "*",
-    "express": "~3.4.8"
+    
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Server.js"
-  },
-  "author": "roman-sharf",
-  "license": "ISC",
   "engines": {
-    "node": "0.10.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@heroku.com:elegant-insults.git"
+    "node": "0.10.x",
+    "npm": "1.3.x"
   }
 }
